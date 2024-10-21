@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.content {
+    width: 50%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header-text {
+    margin-top: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.button {
+    margin-top: 40px;
+}
+
+.button a {
+    background-color: #f8f7eb;
+    color: #4e56b1;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero {
+    width: 50%;
+    background: url('hero-kisr-web.jpg') no-repeat bottom left;
+    background-size: cover;
+}
