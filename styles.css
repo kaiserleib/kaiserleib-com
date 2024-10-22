@@ -189,6 +189,16 @@ h1 {
     .button a {
         padding: 8px 16px;
     }
+    nav {
+        left: 10px; 
+        padding: 10px; 
+        gap: 10px; 
+        flex-direction: row; 
+    }
+
+    nav a {
+        font-size: 14px; 
+    }
 }
 .gallery {
     display: grid;
