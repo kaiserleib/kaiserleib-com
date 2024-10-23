@@ -115,6 +115,10 @@ h1 {
     border-radius: 5px;
 }
 
+.bio p {
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     body {
         flex-direction: column;
