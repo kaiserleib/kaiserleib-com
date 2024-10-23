@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: url('images/hero-kisr-web.jpg') no-repeat bottom left;
+    background: url('https://res.cloudinary.com/dz4dkpwvk/image/upload/v1729713787/hero-kisr-web_uyo6o7.jpg') no-repeat bottom left;
     background-size: cover;
     background-attachment: fixed;
     padding-left: 40px;
