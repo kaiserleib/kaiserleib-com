@@ -20,6 +20,6 @@ function getRandomDescription() {
 
 // Update the text content on page load
 window.onload = function() {
-    const descriptionElement = document.querySelector('.header-text');
+    const descriptionElement = document.querySelector('#flavor-text');
     descriptionElement.textContent = getRandomDescription();
 };
