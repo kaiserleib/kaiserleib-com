@@ -12,14 +12,21 @@ const descriptions = [
     "Venture Capital Beneficiary",
 ];
 
-// Function to select a random description
 function getRandomDescription() {
     const randomIndex = Math.floor(Math.random() * descriptions.length);
     return descriptions[randomIndex];
 }
 
-// Update the text content on page load
-window.onload = function() {
+function updateFlavorText() {
     const descriptionElement = document.querySelector('#flavor-text');
     descriptionElement.textContent = getRandomDescription();
+}
+
+window.onload = function() {
+    updateFlavorText();
+    const descriptionElement = document.querySelector('#flavor-text');
+    
+    descriptionElement.addEventListener('click', function() {
+        updateFlavorText();
+    });
 };
