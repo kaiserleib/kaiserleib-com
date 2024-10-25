@@ -24,7 +24,7 @@ body {
     background-color: black;
 }
 
-body.headshots {
+body.photos {
     background: none;
     display: block; 
     padding-top: 60px; 
