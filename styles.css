@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: url('https://res.cloudinary.com/dz4dkpwvk/image/upload/v1729713787/hero-kisr-web_uyo6o7.jpg') no-repeat bottom left;
+    background: url('https://res.cloudinary.com/dz4dkpwvk/image/upload/c_fill,w_1200,g_auto/v1729713787/hero-kisr-web_uyo6o7.jpg') no-repeat bottom left;
     background-size: cover;
     background-attachment: fixed;
     padding-left: 40px;
@@ -226,7 +226,7 @@ h1 {
     }
 
     .gallery img {
-        width: 100%; /* Make sure the image takes the full width */
-        height: auto; /* Retain original aspect ratio */       
+        width: 100%;
+        height: auto;        
     }
 }
