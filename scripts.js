@@ -1,4 +1,4 @@
-// Array of descriptions
+// description shuffler
 const descriptions = [
     "Former Gifted Kid",
     "Failed Entrepreneur",
@@ -29,4 +29,26 @@ window.onload = function() {
     descriptionElement.addEventListener('click', function() {
         updateFlavorText();
     });
+};
+
+
+//photo shuffler
+function shufflePhotos() {
+    const gallery = document.querySelector('.gallery');
+    const photos = Array.from(gallery.children);
+
+    // Shuffle the photos array using Fisher-Yates algorithm
+    for (let i = photos.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [photos[i], photos[j]] = [photos[j], photos[i]];
+    }
+
+    // Clear the current gallery and append photos in the new random order
+    gallery.innerHTML = '';
+    photos.forEach(photo => gallery.appendChild(photo));
+}
+
+// Call shufflePhotos on page load
+window.onload = function() {
+    shufflePhotos();
 };
