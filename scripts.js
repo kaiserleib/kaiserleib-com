@@ -38,11 +38,19 @@ function shuffleText() {
     descriptionElement.textContent = descriptions[randomIndex];
 }
 
+function addShuffleClickHandler() {
+    const descriptionElement = document.querySelector('#flavor-text');
+    if (descriptionElement) {
+        descriptionElement.addEventListener('click', shuffleText);
+    }
+}
+
 // Unified window.onload function
 window.onload = function() {
     if (document.body.classList.contains('photos')) {
         shufflePhotos(); // Shuffle photos on the photos page
     } else if (document.body.classList.contains('landing')) {
         shuffleText(); // Shuffle text on the index page
+        addShuffleClickHandler();
     }
 };
