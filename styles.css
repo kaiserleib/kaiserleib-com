@@ -33,6 +33,32 @@ body.photos {
     padding-top: 60px; 
 }
 
+body.tour {
+    padding-top: 60px; /* Adjust padding if needed */
+}
+
+.tour-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.tour-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.tour-date h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.tour-date p {
+    font-size: 1.2em;
+    color: gray;
+}
+
 nav {
     position: absolute;
     top: 20px;
