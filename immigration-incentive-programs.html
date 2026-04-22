@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Programs Available to Immigrants — Kaiser Leib</title>
+<meta name="description" content="A policy reference cataloging federal and state programs available to various categories of immigrants.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e6;
+    --bg-deep: #ebe3d1;
+    --text: #1c1814;
+    --muted: #6b5f4e;
+    --accent: #8b1e1e;
+    --accent-dim: #a04040;
+    --rule: #c9bfa8;
+    --max: 38rem;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(139,30,30,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(107,95,78,0.06) 0%, transparent 50%);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.008) 0px, rgba(0,0,0,0.008) 1px, transparent 1px, transparent 2px);
+    z-index: 1;
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .masthead {
+    text-align: center;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3rem;
+  }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  h1.title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem 0;
+  }
+
+  .subtitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    color: var(--accent);
+    margin: 0 0 2rem 0;
+    font-weight: 400;
+  }
+
+  .byline {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .byline strong { color: var(--text); font-weight: 600; }
+
+  .toc {
+    background: var(--bg-deep);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+  }
+  .toc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .toc a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 3.5rem 0 1.25rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--text);
+    margin: 2rem 0 0.5rem 0;
+  }
+
+  p {
+    margin: 0 0 1.25rem 0;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .lead::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    float: left;
+    font-size: 4rem;
+    line-height: 0.85;
+    padding: 0.3rem 0.75rem 0 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  ul, ol { padding-left: 1.25rem; margin: 0 0 1.5rem 0; }
+  li { margin-bottom: 0.4rem; }
+
+  strong { color: var(--text); font-weight: 700; }
+  a { color: var(--accent); }
+  a:hover { background: rgba(139,30,30,0.08); }
+
+  em.punch {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--accent);
+  }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding: 1rem 0 1rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 1rem;
+    color: #2a251f;
+    background: linear-gradient(to right, rgba(139,30,30,0.04), transparent 40%);
+    font-style: italic;
+  }
+
+  .note {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.98rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px dotted var(--rule);
+    border-bottom: 1px dotted var(--rule);
+    margin: 1.5rem 0 2rem;
+  }
+
+  .footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media print {
+    body { background: white; }
+    body::before { display: none; }
+    .container { padding: 0; }
+    .toc, .footer { display: none; }
+    h2 { break-after: avoid; }
+    .callout { break-inside: avoid; }
+  }
+
+  @media (max-width: 560px) {
+    .container { padding: 2.5rem 1.25rem 4rem; }
+    .callout { padding-left: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="masthead">
+    <div class="kicker">Policy Reference · Immigration</div>
+    <h1 class="title">Government Programs Available to Immigrants</h1>
+    <div class="subtitle">A policy reference</div>
+    <div class="byline">Compiled by <strong>Kaiser Leib</strong> · Helena, Montana</div>
+  </header>
+
+  <article>
+
+    <h2>Executive Summary</h2>
+
+    <p class="lead">This document catalogs specific federal and state programs available to various categories of immigrants that could be characterized as taxpayer-funded incentives. These programs range from emergency services available to all residents regardless of status, to comprehensive resettlement assistance for refugees and other humanitarian populations.</p>
+
+    <div class="note">Note: This analysis presents factual information about existing programs without taking a position on their policy merit or role as migration incentives.</div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#undocumented">Programs available to undocumented immigrants</a></li>
+        <li><a href="#refugees">Refugee and asylum assistance</a></li>
+        <li><a href="#temporary">Temporary status programs</a></li>
+        <li><a href="#family">Family reunification programs</a></li>
+        <li><a href="#state">State and local variations</a></li>
+        <li><a href="#costs">Cost estimates and fiscal impact</a></li>
+        <li><a href="#context">Policy context</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="undocumented">Programs Available to Undocumented Immigrants</h2>
+
+    <h3>Emergency Medical Care</h3>
+    <p><strong>Emergency Medicaid</strong> provides medical coverage for emergency situations regardless of immigration status. <a href="https://usafacts.org/articles/immigrant-program-eligibility/">Federal law requires hospital emergency departments to treat anyone in an emergency, regardless of immigration status or ability to pay</a>. <a href="https://usafacts.org/articles/immigrant-program-eligibility/">In 2023, the federal government spent $2.8 billion on Emergency Medicaid, less than 1% of Medicaid spending</a>.</p>
+
+    <h3>Education Services</h3>
+    <p><strong>Public school education</strong> is guaranteed to all children ages 5&ndash;18, including those without legal status. This includes not only classroom instruction but also <a href="https://cis.org/Report/Welfare-Use-Immigrants-and-USBorn-2024">free/reduced price school lunch/breakfast programs that illegal-immigrant children can receive directly</a>.</p>
+
+    <h3>Child Nutrition Programs</h3>
+    <p><strong>Women, Infants, and Children (WIC)</strong> nutrition assistance is available to qualifying children and pregnant women <a href="https://cis.org/Report/Welfare-Use-Immigrants-and-USBorn-2024">regardless of immigration status in many jurisdictions</a>.</p>
+
+    <h3>Tax Benefits</h3>
+    <p><strong>Earned Income Tax Credit (EITC)</strong> can be claimed by <a href="https://cis.org/Report/Welfare-Use-Immigrants-and-USBorn-2024">several million illegal immigrants who have work authorization (e.g. DACA, TPS, and many parolees)</a>, providing refundable tax credits that function as direct cash payments.</p>
+
+    <h3>State-Funded Programs</h3>
+    <p>Many states have created their own programs to fill gaps in federal eligibility. <a href="https://www.migrationpolicy.org/content/immigrants-public-benefits-us">As of October 2024, the District of Columbia and 11 states (California, Connecticut, Illinois, Maine, Massachusetts, New Jersey, New York, Oregon, Rhode Island, Vermont, and Washington) administered their own Medicaid-like programs to cover certain groups of unauthorized immigrants, most typically children</a>.</p>
+
+    <h2 id="refugees">Refugee and Asylum Assistance Programs</h2>
+
+    <h3>Refugee Cash Assistance (RCA)</h3>
+    <p>The federal Office of Refugee Resettlement <a href="https://acf.gov/orr/programs/refugees">provides time-limited cash and medical assistance to new arrivals, as well as support for case management services, English as a Foreign Language classes, and job readiness and employment services</a>. <a href="https://dpss.lacounty.gov/en/cash/rca.html">RCA is a 4-month time-limited cash assistance program for refugees who are not otherwise eligible for any other cash aid</a>.</p>
+
+    <h3>Comprehensive Resettlement Services</h3>
+    <p>Refugee resettlement includes extensive support packages: <a href="https://www.commonpoint.org/program/resettlement-and-integration-services">facilitating appropriate housing, furnishings, food and seasonal clothing upon arrival, airport pick up, assistance with urgent medical and other needs, enrollment in English language and employment programs (for adults), and enrollment in public school (for children), applying for Social Security cards and public benefits programs</a>.</p>
+
+    <h3>Medical and Social Services</h3>
+    <p><a href="https://acf.gov/orr/programs/refugees">Refugee Medical Assistance provides short-term medical coverage to refugees ineligible for Medicaid</a>. Additional services include <a href="https://acf.gov/orr/programs/refugees">medical screening, health promotion, services for trauma-affected refugees, and specialized support for torture survivors</a>.</p>
+
+    <h3>Afghan and Ukrainian Parolees</h3>
+    <p>Special legislation has made certain humanitarian parolees eligible for refugee-level benefits. <a href="https://www.congress.gov/crs-product/R47654">Ukrainians paroled into the United States during specified time periods are eligible for refugee-like benefits, including employment authorization incident to status</a>.</p>
+
+    <h2 id="temporary">Temporary Status Programs</h2>
+
+    <h3>Temporary Protected Status (TPS)</h3>
+    <p>TPS provides work authorization and protection from removal for nationals of designated countries. <a href="https://www.americanimmigrationcouncil.org/fact-sheet/temporary-protected-status-tps-overview/">As of March 31, 2025, there were approximately 1.3 million people with TPS living in the United States</a>. Recipients can legally work and are eligible for certain federal benefits.</p>
+
+    <h3>DACA Program</h3>
+    <p>Deferred Action for Childhood Arrivals recipients receive work authorization and are <a href="https://www.nilc.org/resources/overview-immeligfedprograms/">able to access health coverage through the Affordable Care Act</a>.</p>
+
+    <h3>CHNV Parole Program (Terminated 2025)</h3>
+    <p>The now-terminated parole process for Cubans, Haitians, Nicaraguans, and Venezuelans provided work authorization and legal presence. <a href="https://www.americanimmigrationcouncil.org/fact-sheet/biden-administrations-humanitarian-parole-program-cubans-haitians-nicaraguans-and/">At the time of termination in March 2025, an estimated 195,000 people had current parole grants under CHNV</a>.</p>
+
+    <h2 id="family">Family Reunification Programs</h2>
+
+    <h3>Expanded Parole Processes</h3>
+    <p><a href="https://www.congress.gov/crs-product/R46570">In 2023, the Biden Administration created new family reunification processes for nationals of Colombia, El Salvador, Guatemala, Honduras, and Ecuador</a>. These programs allow qualifying family members to receive work authorization while awaiting permanent status.</p>
+
+    <h3>Cuban and Haitian Family Reunification</h3>
+    <p>Long-standing programs provide <a href="https://www.ilrc.org/sites/default/files/2024-09/Special%20Parole%20Programs%20-%20FINAL%209.12.24.pdf">case management and employment services for qualifying family members</a> of U.S. citizens and permanent residents.</p>
+
+    <h2 id="state">State and Local Variations</h2>
+
+    <h3>Healthcare Expansion</h3>
+    <p>Several states have expanded beyond federal requirements. For example, <a href="https://www.migrationpolicy.org/content/immigrants-public-benefits-us">California voted in 2023 to become the first state (effective in 2027) to provide food assistance for all residents ages 55 and older, regardless of immigration status</a>.</p>
+
+    <h3>Subsidized Insurance</h3>
+    <p><a href="https://www.commonwealthfund.org/blog/2024/states-expand-access-affordable-private-coverage-immigrant-populations">Colorado&rsquo;s OmniSalud program provides state subsidies for health insurance to undocumented immigrants with incomes up to 150 percent of the federal poverty level</a>. <a href="https://www.commonwealthfund.org/blog/2024/states-expand-access-affordable-private-coverage-immigrant-populations">Washington State secured a federal waiver permitting undocumented immigrants to enroll directly via its ACA marketplace</a>.</p>
+
+    <h2 id="costs">Cost Estimates and Fiscal Impact</h2>
+
+    <h3>Federal Spending Projections</h3>
+    <p><a href="https://epicforamerica.org/federal-budget/billions-of-government-benefits-for-illegal-aliens/">The Congressional Budget Office estimated that by FY 2034, outlays for &ldquo;benefits provided to immigrants in the surge population and their children&rdquo; will total $177 billion</a>.</p>
+
+    <h3>Annual Costs</h3>
+    <p><a href="https://epicforamerica.org/federal-budget/billions-of-government-benefits-for-illegal-aliens/">The Federation for American Immigration Reform (FAIR) estimates that federal expenditures on illegal aliens in 2023 totaled nearly $66.5 billion. This includes more than $23 billion in federal medical expenditures and $11.6 billion in welfare benefits</a>.</p>
+
+    <h3>Per-Person Estimates</h3>
+    <p><a href="https://epicforamerica.org/federal-budget/billions-of-government-benefits-for-illegal-aliens/">The Manhattan Institute estimates that every new illegal immigrant has an average net fiscal burden of about $130,000</a>. The study finds that immigrants without a high school diploma who arrive between ages 18&ndash;24 can receive $332,000 in taxpayer-provided benefits over their lifetime.</p>
+
+    <h2 id="context">Policy Context</h2>
+
+    <h3>Legal Framework</h3>
+    <p>Most federal benefit restrictions stem from the Personal Responsibility and Work Opportunity Reconciliation Act of 1996 (PRWORA), which <a href="https://www.congress.gov/crs-product/R47318">defines federal public benefits to include programs such as non-emergency Medicaid, the Supplemental Nutrition Assistance Program (SNAP), Supplemental Security Income (SSI), Temporary Assistance for Needy Families (TANF), and most housing assistance programs</a>.</p>
+
+    <h3>Recent Changes</h3>
+    <p><a href="https://www.nilc.org/resources/overview-immeligfedprograms/">In July 2025, a federal budget reconciliation bill imposed severe new restrictions on immigrant eligibility for SNAP, Medicaid, the Children&rsquo;s Health Insurance Program (CHIP), Medicare and premium tax credits for health coverage</a>.</p>
+
+    <h3>Usage Patterns</h3>
+    <p><a href="https://cis.org/Report/Welfare-Use-Immigrants-and-USBorn-2024">A 2024 Center for Immigration Studies analysis estimated that 51 percent of households headed by legal immigrants use at least one major welfare program. Among illegal immigrants, the rate is estimated at 61 percent</a>.</p>
+
+    <h2>Conclusion</h2>
+
+    <p>These programs represent a complex web of federal, state, and local benefits available to various categories of immigrants. While designed to address humanitarian needs, public health requirements, and constitutional mandates, they constitute measurable fiscal costs that can be cited in policy debates about immigration incentives and border security measures.</p>
+
+    <p>The existence and scope of these programs provide concrete examples for policymakers advocating for reforms to eliminate what they characterize as taxpayer-funded incentives for unauthorized immigration, while also highlighting the challenge of balancing humanitarian obligations with fiscal considerations.</p>
+
+  </article>
+
+  <footer class="footer">
+    Kaiser Leib · <a href="https://kaiserleib.com">kaiserleib.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

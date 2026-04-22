@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration Enforcement — Kaiser Leib</title>
+<meta name="description" content="Notes on immigration enforcement: the civil administrative framework, due process, and constitutional limits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e6;
+    --bg-deep: #ebe3d1;
+    --text: #1c1814;
+    --muted: #6b5f4e;
+    --accent: #8b1e1e;
+    --accent-dim: #a04040;
+    --rule: #c9bfa8;
+    --max: 38rem;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(139,30,30,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(107,95,78,0.06) 0%, transparent 50%);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.008) 0px, rgba(0,0,0,0.008) 1px, transparent 1px, transparent 2px);
+    z-index: 1;
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .masthead {
+    text-align: center;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3rem;
+  }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  h1.title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem 0;
+  }
+
+  .subtitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    color: var(--accent);
+    margin: 0 0 2rem 0;
+    font-weight: 400;
+  }
+
+  .byline {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .byline strong { color: var(--text); font-weight: 600; }
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 3.5rem 0 1.25rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--text);
+    margin: 2rem 0 0.5rem 0;
+  }
+
+  p {
+    margin: 0 0 1.25rem 0;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .lead::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    float: left;
+    font-size: 4rem;
+    line-height: 0.85;
+    padding: 0.3rem 0.75rem 0 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  ul, ol {
+    padding-left: 1.25rem;
+    margin: 0 0 1.5rem 0;
+  }
+  li { margin-bottom: 0.4rem; }
+
+  strong { color: var(--text); font-weight: 700; }
+  a { color: var(--accent); }
+  a:hover { background: rgba(139,30,30,0.08); }
+
+  em.punch {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--accent);
+  }
+
+  .pullquote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    line-height: 1.3;
+    text-align: center;
+    color: var(--accent);
+    margin: 2rem 0;
+    padding: 1.25rem 1rem;
+  }
+  .pullquote::before,
+  .pullquote::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 auto 1rem;
+  }
+  .pullquote::after { margin: 1rem auto 0; }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding: 1rem 0 1rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.05rem;
+    color: #2a251f;
+    background: linear-gradient(to right, rgba(139,30,30,0.04), transparent 40%);
+  }
+
+  .sources {
+    font-size: 0.95rem;
+    color: var(--muted);
+    padding: 0;
+    list-style: none;
+    counter-reset: footnote;
+  }
+  .sources li {
+    padding: 0.6rem 0;
+    border-bottom: 1px dotted var(--rule);
+    font-style: normal;
+    counter-increment: footnote;
+  }
+  .sources li::before {
+    content: counter(footnote) ".  ";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .sources li:last-child { border-bottom: none; }
+  .sources cite { font-style: italic; color: var(--text); }
+
+  .footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media print {
+    body { background: white; }
+    body::before { display: none; }
+    .container { padding: 0; }
+    .footer { display: none; }
+    h2 { break-after: avoid; }
+    .callout, .pullquote { break-inside: avoid; }
+  }
+
+  @media (max-width: 560px) {
+    .container { padding: 2.5rem 1.25rem 4rem; }
+    .callout { padding-left: 1rem; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="masthead">
+    <div class="kicker">Policy Notes · Immigration</div>
+    <h1 class="title">Immigration Enforcement</h1>
+    <div class="subtitle">Securing the border, respecting the Constitution</div>
+    <div class="byline">Compiled by <strong>Kaiser Leib</strong> · Helena, Montana</div>
+  </header>
+
+  <article>
+
+    <p class="lead">We can secure our border and enforce our laws while still respecting constitutional principles. That&rsquo;s not just the right thing to do &mdash; it&rsquo;s the smart thing to do.</p>
+
+    <p>When we talk about immigration enforcement, we need to get the <strong>burden of proof</strong> right. In immigration matters, just like all other legal proceedings, the government should have to prove its case, but that doesn&rsquo;t mean endless delays for violent criminals already convicted in our courts. We can prioritize immediate deportation of non-citizens imprisoned at taxpayer expense while still maintaining proper legal standards.</p>
+
+    <p><strong>Due process</strong> matters &mdash; but it should work efficiently while it protects the rights it was designed to protect. Americans deserve due process protections against mass surveillance and government overreach. The government shouldn&rsquo;t use immigration policy as a pretext to violate the civil liberties, speech, and property rights of American citizens.</p>
+
+    <p>We can end the taxpayer-funded incentives that encourage both legal and illegal entry while ensuring that our legal system operates fairly. We can secure our border while protecting constitutional principles. The key is putting American citizens first and making sure our immigration system serves our national interests &mdash; not special interests.</p>
+
+    <div class="pullquote">
+      True immigration reform starts with ending regime-change wars and narcotics policies that destabilize regions and drive mass migration in the first place.
+    </div>
+
+    <p>When we stop creating the problems overseas, we reduce the pressure at our border.</p>
+
+    <h2>The Current Immigration Removal Process</h2>
+
+    <p class="lead">Immigration violations are <strong>civil administrative matters</strong>, not criminal prosecutions. This means that:</p>
+
+    <ul>
+      <li><strong>The state has a lower burden of proof.</strong> The government must prove removability by &ldquo;clear and convincing evidence&rdquo; rather than &ldquo;beyond a reasonable doubt.&rdquo;<sup>1</sup></li>
+      <li><strong>Defendants have no right to appointed counsel.</strong> Respondents can hire private attorneys but aren&rsquo;t provided free legal representation.</li>
+      <li><strong>No jury trial.</strong> Cases are decided by administrative immigration judges.</li>
+      <li><strong>Broader detention authority.</strong> The government is legally able to detain individuals on immigration violations more readily than in criminal cases.</li>
+    </ul>
+
+    <p>This civil framework enables more efficient enforcement while still providing legal protections.</p>
+
+    <h3>Arrest and Apprehension</h3>
+
+    <p>Immigration and Customs Enforcement can arrest individuals based on <strong>probable cause</strong> to believe they&rsquo;re removable from the United States. These arrests don&rsquo;t need to meet the standards of <strong>preponderance of evidence</strong> or <strong>clear and convincing evidence</strong>. Probable cause is sufficient.</p>
+
+    <p>ICE typically uses <strong>administrative warrants</strong> signed by ICE supervisors &mdash; not judicial warrants from courts. These require probable cause but don&rsquo;t need a judge&rsquo;s approval, enabling faster enforcement action.<sup>2</sup> <sup>3</sup></p>
+
+    <p><em class="punch">Common arrest scenarios:</em></p>
+
+    <ul>
+      <li>Database matches showing immigration violations</li>
+      <li>Traffic stops revealing unlawful presence</li>
+      <li>Workplace enforcement operations</li>
+      <li>Failed check-ins with immigration authorities</li>
+      <li>Criminal arrests that reveal immigration status</li>
+    </ul>
+
+    <h3>The Administrative Court System</h3>
+
+    <p>Immigration courts operate under the Department of Justice, not the federal court system. This means:</p>
+
+    <ul>
+      <li><strong>Immigration judges are DOJ employees</strong>, not independent Article III federal judges.</li>
+      <li><strong>No jury trials.</strong> These administrative judges decide all matters.</li>
+      <li><strong>Streamlined procedures</strong> designed for administrative efficiency.<sup>4</sup></li>
+      <li><strong>ICE attorneys</strong> represent the government (not federal prosecutors).</li>
+    </ul>
+
+    <h2>The Removal Proceeding</h2>
+
+    <p><strong>1. Notice to Appear.</strong> The process begins when ICE files charges specifying why the person should be removed.</p>
+
+    <p><strong>2. Government&rsquo;s burden.</strong> ICE must prove removability by <strong>clear and convincing evidence</strong>, a higher burden of proof than reasonable suspicion, showing:</p>
+
+    <ul>
+      <li>The person is not a U.S. citizen.</li>
+      <li>They violated immigration law (overstayed visa, entered illegally, committed disqualifying crimes, etc.).<sup>1</sup></li>
+    </ul>
+
+    <p><strong>3. Respondent&rsquo;s options.</strong> If removability is proven, the burden shifts. The respondent can:</p>
+
+    <ul>
+      <li>Accept removal and possibly receive voluntary departure.</li>
+      <li>Apply for relief (asylum, cancellation of removal, adjustment of status).</li>
+      <li>Appeal the immigration judge&rsquo;s decision.</li>
+    </ul>
+
+    <p><strong>4. Detention decisions.</strong></p>
+
+    <ul>
+      <li><strong>Mandatory detention</strong> applies to certain criminal convictions and recent border crossers.</li>
+      <li><strong>Discretionary detention</strong> based on flight risk and public safety assessments.</li>
+      <li>Unlike criminal bail, there&rsquo;s no presumption of release.</li>
+    </ul>
+
+    <h2>Key Differences from Traditional Courts</h2>
+
+    <p><strong>Efficiency focus.</strong> The system is designed for administrative efficiency rather than the deliberate pace of criminal justice.</p>
+
+    <p><strong>Limited appeals.</strong> Appeals go to the Board of Immigration Appeals (also within DOJ), not federal courts, unless constitutional issues arise.</p>
+
+    <p><strong>Enforcement priority.</strong> The system presumes enforcement unless the respondent proves eligibility for relief &mdash; the opposite of criminal law&rsquo;s presumption of innocence.</p>
+
+    <p><strong>Resource allocation.</strong> This framework allows prioritizing removal of criminals and recent border crossers while still providing due process through the administrative system.</p>
+
+    <h2>Supporting Effective Enforcement</h2>
+
+    <p>This civil enforcement framework supports efficient removal of immigration violators while maintaining legal safeguards. The lower burden of proof and administrative court system enable prioritizing deportation of non-citizens imprisoned at taxpayer expense and violent criminals, exactly as advocated by enforcement-first policies.</p>
+
+    <p><em class="punch">The key is ensuring this system operates efficiently to serve American interests while respecting the constitutional rights of U.S. citizens</em> &mdash; protecting against the mass surveillance and civil-liberty violations that threaten our fundamental freedoms.</p>
+
+    <h2>References</h2>
+
+    <ol class="sources">
+      <li><a href="https://www.law.cornell.edu/uscode/text/8/1229a">8 U.S. Code &sect; 1229a &mdash; Removal proceedings</a>: &ldquo;In the proceeding the Service has the burden of establishing by clear and convincing evidence that, in the case of an alien who has been admitted to the United States, the alien is deportable.&rdquo; See also <a href="https://www.law.cornell.edu/cfr/text/8/1240.8">8 CFR &sect; 1240.8</a>: &ldquo;A respondent charged with deportability shall be found to be removable if the Service proves by clear and convincing evidence that the respondent is deportable as charged.&rdquo;</li>
+      <li>Congressional Research Service, <a href="https://www.congress.gov/crs-product/LSB10362"><cite>Immigration Arrests in the Interior of the United States: A Primer</cite></a>: &ldquo;Unlike judicial warrants issued in criminal cases, ICE warrants do not require a detached and neutral magistrate; instead, ICE warrants require the officer to establish that &lsquo;there is probable cause to believe&rsquo; that the individual named in the warrant is subject to removal.&rdquo;</li>
+      <li>Immigration and Customs Enforcement, <a href="https://www.ice.gov/immigration-enforcement-frequently-asked-questions"><cite>Immigration Enforcement Frequently Asked Questions</cite></a>: &ldquo;ICE uses two types of civil administrative warrants: Form I-200 warrants authorize ICE to arrest people suspected of violating immigration law. Form I-205 warrants authorize ICE to remove aliens with final orders of removal from the United States. ICE doesn&rsquo;t need a judge to issue I-200 and [I-205 warrants].&rdquo;</li>
+      <li><a href="https://www.justice.gov/eoir/page/file/988046/dl?inline="><cite>Immigration Court Practice Manual</cite></a>: &ldquo;Deportation and Removal hearings are administrative proceedings that are civil in nature. Due process in such a proceeding ordinarily does not require adherence to judicial rules of evidence unless deviation would make the proceeding fundamentally unfair.&rdquo;</li>
+    </ol>
+
+  </article>
+
+  <footer class="footer">
+    Kaiser Leib · <a href="https://kaiserleib.com">kaiserleib.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
