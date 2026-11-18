@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaiser Leib in Santa Cruz</title>
+    <meta name="description" content="Kaiser Leib is bringing a stand-up show to Santa Cruz. Get first dibs on tickets.">
+    <!-- Landing page for Meta ads only; not linked from the nav. -->
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Meta pixel (302 Comedy dataset). PageView on load; Lead when Kit
+         confirms a signup, tagged content_name so it can be told apart from
+         festival signups on the same pixel. -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '317548785478560');
+        fbq('track', 'PageView');
+    </script>
+
+    <style>
+        .signup {
+            max-width: 460px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 28px;
+            border-radius: 5px;
+        }
+        .signup h1 { margin-bottom: 12px; }
+        .signup p.lede {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .signup form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .signup label {
+            position: absolute;
+            width: 1px; height: 1px;
+            overflow: hidden; clip: rect(0 0 0 0);
+        }
+        .signup input[type="email"] {
+            flex: 1 1 220px;
+            min-width: 0;
+            padding: 14px;
+            font-size: 16px;
+            border: 0;
+            border-radius: 5px;
+        }
+        .signup button {
+            background-color: #f8f7eb;
+            color: #4e56b1;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup button:disabled { opacity: 0.6; cursor: default; }
+        .signup .status {
+            min-height: 1.5em;
+            margin-top: 14px;
+            font-size: 16px;
+        }
+        .signup .status a { color: #f8f7eb; }
+        .signup .fine {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #c8c7cb;
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) {
+            .signup { margin-top: 70px; padding: 20px; }
+        }
+    </style>
+</head>
+<body class="landing santa-cruz">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="videos.html">Videos</a>
+        <a href="https://www.instagram.com/kaiser.leib/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </nav>
+
+    <main class="content signup">
+        <div class="header-text">Stand-up comedy · Santa Cruz</div>
+        <h1>Kaiser Leib</h1>
+        <p class="lede">I'm bringing a show to Santa Cruz. Get first dibs on
+            tickets: you'll get a presale code before they go on sale to
+            everyone else.</p>
+
+        <form id="signup" novalidate>
+            <label for="email">Email address</label>
+            <input id="email" name="email_address" type="email" required
+                   autocomplete="email" placeholder="you@example.com">
+            <button type="submit">Get first dibs</button>
+        </form>
+        <p class="status" role="status" aria-live="polite"></p>
+        <p class="fine">A few emails about shows near Santa Cruz. Unsubscribe
+            any time.</p>
+    </main>
+
+    <script>
+    /* Posts to the Kit form "Kaiser - Santa Cruz signup (kaiserleib.com)"
+       (10206928, no confirmation email), the endpoint Kit's own embed uses.
+       Kit rule 5713644 tags each signup "kaiser mailing list" and
+       "Kaiser - Santa Cruz". Same approach as helenacomedyfestival.com's
+       signup.js. */
+    (function () {
+        var FORM = 'https://app.kit.com/forms/10206928/subscriptions';
+        var form = document.getElementById('signup');
+        var status = document.querySelector('.signup .status');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var input = form.querySelector('input');
+            if (!input.checkValidity()) {
+                status.textContent = 'That email address doesn’t look right.';
+                input.focus();
+                return;
+            }
+            var button = form.querySelector('button');
+            button.disabled = true;
+            status.textContent = 'Signing you up…';
+            fetch(FORM, {method: 'POST', body: new FormData(form),
+                         headers: {Accept: 'application/json'}})
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    // Kit's bot guard holds some signups until the visitor
+                    // passes a check on its own page.
+                    if (data.status === 'quarantined' && data.url) {
+                        status.innerHTML = 'Almost done: <a target="_blank" rel="noopener" href="' +
+                            encodeURI(data.url) + '">confirm you’re not a robot</a>.';
+                        button.disabled = false;
+                        return;
+                    }
+                    if (data.status !== 'success') throw new Error(data.status);
+                    form.remove();
+                    status.textContent = 'You’re on the list. I’ll email you the presale code.';
+                    try { if (window.fbq) fbq('track', 'Lead', {content_name: 'kaiser-santa-cruz'}); } catch (e) {}
+                })
+                .catch(function () {
+                    button.disabled = false;
+                    status.textContent = 'Something went wrong. Try again in a minute.';
+                });
+        });
+    })();
+    </script>
+</body>
+</html>
